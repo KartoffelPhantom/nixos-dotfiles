@@ -23,8 +23,8 @@
   };
   
   #Configs 
-  home.file.".config/i3".source = /home/kartoma/dotfiles/i3/config;
-
+  home.file.".config/i3/config".source = /home/kartoma/dotfiles/i3/config;
+  
   home.packages = with pkgs; [
     bat
     fastfetch
