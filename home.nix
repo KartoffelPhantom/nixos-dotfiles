@@ -9,7 +9,7 @@
     enable = true;
     shellAliases = {
       btw = "echo I wanna end it all";
-      nrs = "sudo nixos-rebuild switch --impure --flake .#kys";
+      nrs = "cd /home/kartoma/dotfiles && sudo nixos-rebuild switch --impure --flake .#kys";
       nrsu = "cd /home/kartoma/dotfiles && nix flake update && sudo nixos-rebuild switch --impure --flake .#kys";
 
       c = "clear && fastfetch";
