@@ -20,7 +20,6 @@
     nh
     nix-output-monitor
     yazi
-    mullvad-vpn
   ];
 
 
