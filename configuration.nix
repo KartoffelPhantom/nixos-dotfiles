@@ -13,7 +13,7 @@ in
 	home-manager.useUserPackages = true;
 	home-manager.useGlobalPkgs = true;
 	home-manager.backupFileExtension = "backup";
-	home-manager.users.kartoma = import ./home.nix;
+	home-manager.users.kartoma = import /home/kartoma/dotfiles/home.nix;
 
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
@@ -55,7 +55,6 @@ in
 	     vim 
 	     kitty
 	     btop
-	     fastfetch
 	     wl-clipboard
      mako
      google-chrome
@@ -67,7 +66,6 @@ in
      neovim
      git 
      tealdeer
-     bat
      legcord
  ];
 
