@@ -1,75 +1,94 @@
 { config, lib, pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
-in
-{
+  let
+    home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
+  in
+  {
   imports =
     [ 
       /etc/nixos/hardware-configuration.nix
       ./nvidia.nix
-	      (import "${home-manager}/nixos")
-	    ];
+	(import "${home-manager}/nixos")
+  ];
 
-	home-manager.useUserPackages = true;
-	home-manager.useGlobalPkgs = true;
-	home-manager.backupFileExtension = "backup";
-	home-manager.users.kartoma = import /home/kartoma/dotfiles/home.nix;
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";	
+  home-manager.users.kartoma = import /home/kartoma/dotfiles/home.nix;
+  
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+  networking.hostName = "kys";
+  networking.networkmanager.enable = true;
+	
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-	  networking.hostName = "kys";
-	  networking.networkmanager.enable = true;
+  time.timeZone = "Europe/Berlin";
+  
+# i3 config	   
+  services.xserver = {
+    enable = true;
 	  
-	  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-	  time.timeZone = "Europe/Berlin";
-
-	   services.xserver = {
-	     enable = true;
+  desktopManager = {
+    xterm.enable = false;
+  };
 	  
-	   desktopManager = {
-	     xterm.enable = false;
-	   };
-	  
-	   windowManager.i3 = {
-	     enable = true;
-	     extraPackages = with pkgs; [
-		dmenu
-		i3blocks
-		i3status
-	     ];
-	   };
-	 };
-	   services.displayManager.defaultSession = "none+i3";
+  windowManager.i3 = {
+     enable = true;
+     extraPackages = with pkgs; [
+	dmenu
+	i3blocks
+	i3status
+	  ];
+     };
+  };
+  
+  services.displayManager.defaultSession = "none+i3";
 
-	   users.users.kartoma = {
-	     isNormalUser = true;
-	     extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
-	   };
+# user config
+  users.users.kartoma = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+	};
 
 
-	   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
-	   environment.systemPackages = with pkgs; [
-	     vim 
-	     kitty
-	     btop
-	     wl-clipboard
-     mako
-     google-chrome
-     _1password-gui
-     spotify
-     nerd-fonts.jetbrains-mono
-     alsa-utils
-     tree
-     neovim
-     git 
-     tealdeer
-     legcord
- ];
+# Variables
+  environment.sessionVariables = {
+     FLAKE = "/home/kartoma/dotfiles";
+  };
 
-   system.stateVersion = "25.05"; # Did you read the comment?
+# Steam 
+programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+};
+
+# environment packages
+  environment.systemPackages = with pkgs; [
+    vim 
+    kitty
+    btop
+    wl-clipboard
+    mako
+    google-chrome
+    _1password-gui
+    spotify
+    nerd-fonts.jetbrains-mono
+    alsa-utils
+    tree
+    neovim
+    git 
+    tealdeer
+    legcord
+    nh
+    nix-output-monitor
+  ];
+
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
 
