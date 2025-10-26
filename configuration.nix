@@ -7,6 +7,7 @@
     [ 
       /etc/nixos/hardware-configuration.nix
       ./nvidia.nix
+      /home/kartoma/dotfiles/packages.nix
 	(import "${home-manager}/nixos")
   ];
 
@@ -66,29 +67,11 @@ programs.steam = {
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
 };
-
-# environment packages
-  environment.systemPackages = with pkgs; [
-    vim 
-    kitty
-    btop
-    wl-clipboard
-    mako
-    google-chrome
-    _1password-gui
-    spotify
-    nerd-fonts.jetbrains-mono
-    alsa-utils
-    tree
-    neovim
-    git 
-    tealdeer
-    legcord
-    nh
-    nix-output-monitor
-  ];
+  
 
   system.stateVersion = "25.05"; # Did you read the comment?
+
+
 
 }
 
