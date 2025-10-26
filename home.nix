@@ -28,8 +28,6 @@
   home.file.".config/kitty/current-theme.conf".source = /home/kartoma/dotfiles/kitty/current-theme.conf;
   home.file.".config/btop/btop.conf".source = /home/kartoma/dotfiles/btop/btop.conf;
 
-  home.file."/etc/nixos/home.nix".source = /home/kartoma/dotfiles/home.nix;
-  home.file."/etc/nixos/packages.nix".source = /home/kartoma/dotfiles/packages.nix;
   
   home.packages = with pkgs; [
     bat
