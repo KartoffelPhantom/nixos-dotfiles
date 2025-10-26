@@ -61,6 +61,7 @@
      git 
      tealdeer
      bat
+     legcord
  ];
 
 
