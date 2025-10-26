@@ -1,55 +1,62 @@
 { config, lib, pkgs, ... }:
-
+let
+  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
+in
 {
   imports =
     [ 
       /etc/nixos/hardware-configuration.nix
       ./nvidia.nix
-    ];
+	      (import "${home-manager}/nixos")
+	    ];
 
-   boot.loader.systemd-boot.enable = true;
-   boot.loader.efi.canTouchEfiVariables = true;
+	home-manager.useUserPackages = true;
+	home-manager.useGlobalPkgs = true;
+	home-manager.backupFileExtension = "backup";
+	home-manager.users.kartoma = import ./home.nix;
 
-  networking.hostName = "kys";
-  networking.networkmanager.enable = true;
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
 
-  time.timeZone = "Europe/Berlin";
+	  networking.hostName = "kys";
+	  networking.networkmanager.enable = true;
+	  
+	  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
- 
-   services.xserver = {
-     enable = true;
-  
-   desktopManager = {
-     xterm.enable = false;
-   };
-  
-   windowManager.i3 = {
-     enable = true;
-     extraPackages = with pkgs; [
-	dmenu
-	i3blocks
-	i3status
-     ];
-   };
- };
-   services.displayManager.defaultSession = "none+i3";
+	  time.timeZone = "Europe/Berlin";
 
-   users.users.kartoma = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
-   };
+	   services.xserver = {
+	     enable = true;
+	  
+	   desktopManager = {
+	     xterm.enable = false;
+	   };
+	  
+	   windowManager.i3 = {
+	     enable = true;
+	     extraPackages = with pkgs; [
+		dmenu
+		i3blocks
+		i3status
+	     ];
+	   };
+	 };
+	   services.displayManager.defaultSession = "none+i3";
+
+	   users.users.kartoma = {
+	     isNormalUser = true;
+	     extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+	   };
 
 
-   nixpkgs.config.allowUnfree = true;
+	   nixpkgs.config.allowUnfree = true;
 
-   environment.systemPackages = with pkgs; [
-     vim 
-     kitty
-     btop
-     fastfetch
-     wl-clipboard
+	   environment.systemPackages = with pkgs; [
+	     vim 
+	     kitty
+	     btop
+	     fastfetch
+	     wl-clipboard
      mako
      google-chrome
      _1password-gui
