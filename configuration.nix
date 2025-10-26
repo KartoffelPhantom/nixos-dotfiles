@@ -27,6 +27,7 @@
   time.timeZone = "Europe/Berlin";
   
 # i3 config	   
+    environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
 	  
@@ -44,6 +45,7 @@
      };
   };
   
+  programs.i3lock.enable = true;
   services.displayManager.defaultSession = "none+i3";
 
 # user config
