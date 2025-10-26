@@ -10,7 +10,7 @@
     shellAliases = {
       btw = "echo I wanna end it all";
       nrs = "sudo nixos-rebuild switch --impure";
-      nrsu = "cd /home/kartoma/dotfiles && nix flake update && sudo nixos-rebuild switch --impure --flake .#kys && ./git.sh && cd";
+      nrsu = "cd /home/kartoma/dotfiles && nix flake update && sudo nixos-rebuild switch --impure --flake .#kys && cd";
 
       c = "clear && fastfetch";
     };
