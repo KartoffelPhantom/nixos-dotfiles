@@ -191,4 +191,4 @@ bar {
 }
 
 
-for_window [instance="steam"] floating enable
+
