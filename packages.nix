@@ -20,6 +20,7 @@
     nix-output-monitor
     yazi
     gamescope
+    pavucontrol
   ];
 
 
