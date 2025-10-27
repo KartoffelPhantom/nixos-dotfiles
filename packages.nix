@@ -21,6 +21,7 @@
     yazi
     gamescope
     pavucontrol
+    labymod-launcher
   ];
 
 
