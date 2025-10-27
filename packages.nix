@@ -20,6 +20,7 @@
     nh
     nix-output-monitor
     yazi
+    gamescope
   ];
 
 
