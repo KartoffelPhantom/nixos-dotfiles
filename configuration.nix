@@ -27,49 +27,27 @@
   time.timeZone = "Europe/Berlin";
   
 # i3 config	   
-#   environment.pathsToLink = [ "/libexec" ];
-#  services.xserver = {
-#    enable = true;
-#	  
-#  desktopManager = {
-#    xterm.enable = false;
-#  };
-#	  
-#  windowManager.i3 = {
-#     enable = true;
-#     extraPackages = with pkgs; [
-#	dmenu
-#	i3blocks
-#	i3status
-#	  ];
-#     };
-#  };
+  environment.pathsToLink = [ "/libexec" ];
+  services.xserver = {
+    enable = true;
+	  
+  desktopManager = {
+    xterm.enable = false;
+  };
+	  
+  windowManager.i3 = {
+     enable = true;
+     extraPackages = with pkgs; [
+	dmenu
+	i3blocks
+	i3status
+	  ];
+     };
+  };
  
   
-#  services.displayManager.defaultSession = "none+i3";
-#  programs.i3lock.enable = true;
-
-# Awesomewm
-    services={
-        xserver = {
-            enable = true;
-
-            windowManager.awesome = {
-                enable = true;
-                luaModules = with pkgs.luaPackages; [
-                    luarocks # is the package manager for Lua modules
-                    luadbi-mysql # Database abstraction layer
-                    awesome-wm-widgets # Community collection of widgets
-                ];
-
-            };
-        };
-
-        displayManager = {
-            sddm.enable = true;
-            defaultSession = "none+awesome";
-        };
-    };
+  services.displayManager.defaultSession = "none+i3";
+  programs.i3lock.enable = true;
 
 # user config
   users.users.kartoma = {

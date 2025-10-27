@@ -22,6 +22,7 @@
     gamescope
     pavucontrol
     labymod-launcher
+    flameshot
   ];
 
 
