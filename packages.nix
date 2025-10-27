@@ -13,7 +13,6 @@
     nerd-fonts.jetbrains-mono
     alsa-utils
     tree
-    neovim
     git 
     tealdeer
     legcord
