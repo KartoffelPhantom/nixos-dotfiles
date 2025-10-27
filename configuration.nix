@@ -55,6 +55,7 @@
 	};
 
 
+
   nixpkgs.config.allowUnfree = true;
 
 # Variables
