@@ -49,6 +49,9 @@
   services.displayManager.defaultSession = "none+i3";
   programs.i3lock.enable = true;
 
+# Hyrpland
+programs.hyprland.enable = true;
+
 # user config
   users.users.kartoma = {
     isNormalUser = true;
