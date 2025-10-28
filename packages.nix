@@ -24,6 +24,7 @@
     labymod-launcher
     flameshot
     wofi
+    bemenu
   ];
 
 
