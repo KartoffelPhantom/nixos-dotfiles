@@ -45,7 +45,7 @@
       Type = "oneshot"; # A one-time command
       # Use the feh from the Nix store and the homeDirectory variable.
       # The full path is more reliable in the systemd environment.
-      ExecStart = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/dotfiles/i3/bear.jpg";
+      ExecStart = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/dotfiles/i3/ALLqk82.png";
     };
     Install = {
       WantedBy = [ "graphical-session.target" ];
