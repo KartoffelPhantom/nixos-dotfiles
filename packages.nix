@@ -25,6 +25,8 @@
     flameshot
     wofi
     bemenu
+    vulkan-loader
+    vulkan-tools
   ];
 
 
