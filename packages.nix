@@ -23,6 +23,7 @@
     pavucontrol
     labymod-launcher
     flameshot
+    wofi
   ];
 
 
