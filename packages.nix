@@ -27,6 +27,7 @@
     bemenu
     vulkan-loader
     vulkan-tools
+    prismlauncher
   ];
 
 
