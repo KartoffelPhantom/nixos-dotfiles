@@ -29,6 +29,7 @@
     vulkan-tools
     prismlauncher
     unp
+    zulu17
   ];
 
 
