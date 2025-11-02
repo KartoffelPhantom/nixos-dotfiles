@@ -1,8 +1,7 @@
   { config, lib, pkgs, ... }:
    {
        # environment packages
-  environment.systemPackages = with pkgs; [
-    vim 
+  environment.systemPackages = with pkgs; [ 
     kitty
     btop
     wl-clipboard
@@ -29,7 +28,14 @@
     vulkan-tools
     prismlauncher
     unp
-    zulu17
+    #zulu8
+    #zulu17
+    zulu21
+    zenity
+    zip
+    ungoogled-chromium
+    xorg.xhost
+    neovim
   ];
 
 

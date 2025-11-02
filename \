@@ -59,7 +59,8 @@ programs.hyprland.enable = true;
 	};
 
 
-  nixpkgs.config.allowUnfree = true;
+
+   nixpkgs.config.allowUnfree = true;
 
 # Variables
   environment.sessionVariables = {

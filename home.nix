@@ -28,6 +28,7 @@
   home.file.".config/btop/btop.conf".source = /home/kartoma/dotfiles/btop/btop.conf;
   home.file.".config/hypr/hyprland.conf".source = /home/kartoma/dotfiles/hypr/hyprland.conf;
 
+
   home.packages = with pkgs; [
     bat
     fastfetch
