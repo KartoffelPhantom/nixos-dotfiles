@@ -1,5 +1,5 @@
 #!/bin/sh
-sleep 5
+sleep 10
 id=$(xinput list --id-only "Compx SCYROX 8K Dongle")
 echo "$(date): device id is $id" >> ~/.config/i3/disable-middle-emulation.log
 if [ -n "$id" ]; then
