@@ -23,6 +23,7 @@
   
   #Configs 
   home.file.".config/i3/config".source = /home/kartoma/dotfiles/i3/config;
+  home.file.".config/i3/mouse.sh".source = /home/kartoma/dotfiles/i3/mouse.sh;
   home.file.".config/kitty/kitty.conf".source = /home/kartoma/dotfiles/kitty/kitty.conf;
   home.file.".config/kitty/current-theme.conf".source = /home/kartoma/dotfiles/kitty/current-theme.conf;
   home.file.".config/btop/btop.conf".source = /home/kartoma/dotfiles/btop/btop.conf;
