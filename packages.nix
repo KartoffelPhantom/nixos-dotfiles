@@ -36,6 +36,7 @@
     ungoogled-chromium
     xorg.xhost
     neovim
+    wget
   ];
 
 

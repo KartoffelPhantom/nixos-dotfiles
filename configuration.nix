@@ -27,27 +27,34 @@
   time.timeZone = "Europe/Berlin";
   
 # i3 config	   
-  environment.pathsToLink = [ "/libexec" ];
-  services.xserver = {
+environment.pathsToLink = [ "/libexec" ];
+
+services.xserver = {
+  enable = true;
+
+  libinput = {
     enable = true;
-	  
+    mouse.accelProfile = "flat";         # Disables mouse acceleration
+    touchpad.accelProfile = "flat";      # Optional: disables touchpad acceleration
+  };
+
   desktopManager = {
     xterm.enable = false;
   };
-	  
+
   windowManager.i3 = {
-     enable = true;
-     extraPackages = with pkgs; [
-	dmenu
-	i3blocks
-	i3status
-	  ];
-     };
+    enable = true;
+    extraPackages = with pkgs; [
+      dmenu
+      i3blocks
+      i3status
+    ];
   };
- 
-  
-  services.displayManager.defaultSession = "none+i3";
-  programs.i3lock.enable = true;
+};
+
+services.displayManager.defaultSession = "none+i3";
+programs.i3lock.enable = true;
+
 
 # Hyrpland
 programs.hyprland.enable = true;
@@ -65,6 +72,10 @@ programs.hyprland.enable = true;
   environment.sessionVariables = {
      FLAKE = "/home/kartoma/dotfiles";
   };
+
+# Mullvad 
+  services.mullvad-vpn.enable = true;
+  networking.firewall.allowedTCPPorts = [ 25565 ];
 
 # Steam 
 programs.steam = {
