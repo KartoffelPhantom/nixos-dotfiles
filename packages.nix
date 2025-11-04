@@ -37,6 +37,7 @@
     xorg.xhost
     neovim
     wget
+    scrcpy
   ];
 
 
