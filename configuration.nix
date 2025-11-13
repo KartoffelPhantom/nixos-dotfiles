@@ -50,8 +50,6 @@ hardware.bluetooth = {
 services.blueman.enable = true;
 
 
-
-
 # i3 config	   
 environment.pathsToLink = [ "/libexec" ];
 
