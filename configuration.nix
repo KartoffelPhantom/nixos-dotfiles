@@ -26,6 +26,32 @@
 
   time.timeZone = "Europe/Berlin";
   
+
+# Bluetooth
+hardware.bluetooth = {
+  enable = true;
+  powerOnBoot = true;
+  settings = {
+    General = {
+      Experimental = true;
+      FastConnectable = true;
+    };
+    Policy = {
+      AutoEnable = true;
+    };
+  };
+  input = {
+    General = {
+      UserspaceHID = true;
+    };
+  };
+};
+
+services.blueman.enable = true;
+
+
+
+
 # i3 config	   
 environment.pathsToLink = [ "/libexec" ];
 

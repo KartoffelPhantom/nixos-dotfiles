@@ -38,6 +38,7 @@
     neovim
     wget
     scrcpy
+    dualsensectl
   ];
 
 
