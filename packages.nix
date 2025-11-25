@@ -38,6 +38,9 @@
     neovim
     wget
     scrcpy
+    alsa-lib
+    alsa-plugins
+    lunar-client
   ];
 
 

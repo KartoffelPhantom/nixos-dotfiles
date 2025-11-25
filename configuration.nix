@@ -86,7 +86,7 @@ programs.hyprland.enable = true;
 # user config
   users.users.kartoma = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "input" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "input" "networkmanager" "adbusers" ]; # Enable ‘sudo’ for the user.
 	};
 
 
@@ -111,7 +111,7 @@ programs.steam = {
   
 
   system.stateVersion = "25.05"; # Did you read the comment?
+  
 
-
-
+  programs.adb.enable = true;
 }
