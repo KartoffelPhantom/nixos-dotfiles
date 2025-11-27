@@ -47,7 +47,7 @@ hardware.bluetooth = {
   };
 };
 
-services.blueman.enable = true;
+# services.blueman.enable = true;
 
 
 # i3 config	   

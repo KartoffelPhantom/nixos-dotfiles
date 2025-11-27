@@ -41,6 +41,7 @@
     alsa-lib
     alsa-plugins
     lunar-client
+    ocs-url
   ];
 
 
