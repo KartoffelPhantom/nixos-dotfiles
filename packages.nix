@@ -28,8 +28,8 @@
     vulkan-tools
     prismlauncher
     unp
-    #zulu8
-    #zulu17
+    zulu8
+    zulu17
     zulu21
     zenity
     zip
@@ -42,6 +42,8 @@
     alsa-plugins
     lunar-client
     ocs-url
+    rescrobbled
+    playerctl
   ];
 
 
