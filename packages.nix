@@ -15,7 +15,6 @@
     git 
     tealdeer
     legcord
-    nh
     nix-output-monitor
     yazi
     gamescope
