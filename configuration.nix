@@ -121,6 +121,7 @@ environment.systemPackages = with pkgs;
 	};
 
 
+
   nixpkgs.config.allowUnfree = true;
 
 # Variables
@@ -145,6 +146,6 @@ programs.steam = {
   
 
   programs.adb.enable = true;
-
+  
 
 }
