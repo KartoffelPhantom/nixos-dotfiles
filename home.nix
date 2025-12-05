@@ -55,5 +55,7 @@
       WantedBy = [ "graphical-session.target" ];
     };
   };
+  home.sessionVariables.PATH = "$HOME/bin:$PATH";
+
 }
 

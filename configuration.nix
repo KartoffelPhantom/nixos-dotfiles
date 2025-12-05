@@ -56,15 +56,13 @@ environment.pathsToLink = [ "/libexec" ];
 services.xserver = {
   enable = true;
 
-  libinput = {
+  libinput = {  # ← Remove "service."
     enable = true;
-    mouse.accelProfile = "flat";         # Disables mouse acceleration
-    touchpad.accelProfile = "flat";      # Optional: disables touchpad acceleration
+    mouse.accelProfile = "flat";
+    touchpad.accelProfile = "flat";
   };
 
-  desktopManager = {
-    xterm.enable = false;
-  };
+  desktopManager.xterm.enable = false;
 
   windowManager.i3 = {
     enable = true;
@@ -75,7 +73,6 @@ services.xserver = {
     ];
   };
 };
-
 services.displayManager.defaultSession = "none+i3";
 programs.i3lock.enable = true;
 
