@@ -38,12 +38,6 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-      prime = {
-    offload.enable = true;
-    offload.enableOffloadCmd = true;
-    intelBusId = "PCI:12:0:0";    # AMD Raphael iGPU
-    nvidiaBusId = "PCI:1:0:0";   # NVIDIA RTX 4070
-  };
   };
 
 }
