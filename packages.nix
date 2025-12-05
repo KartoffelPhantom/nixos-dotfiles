@@ -44,6 +44,7 @@
     rescrobbled
     playerctl
     tree
+    ryubing
   ];
 
 
