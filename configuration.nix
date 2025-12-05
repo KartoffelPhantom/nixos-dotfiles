@@ -146,6 +146,11 @@ programs.steam = {
   
 
   programs.adb.enable = true;
+
+  systemd.tmpfiles.rules = [
+  "f /proc/scsi/scsi 0400 root root -"
+];
+
   
 
 }

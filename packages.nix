@@ -43,6 +43,7 @@
     ocs-url
     rescrobbled
     playerctl
+    tree
   ];
 
 
