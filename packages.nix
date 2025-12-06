@@ -6,7 +6,6 @@
     btop
     wl-clipboard
     mako
-    google-chrome
     _1password-gui
     spotify
     nerd-fonts.jetbrains-mono
@@ -45,6 +44,8 @@
     playerctl
     tree
     ryubing
+    cemu
+    librewolf
   ];
 
 
