@@ -5,7 +5,6 @@
     kitty
     btop
     wl-clipboard
-    mako
     _1password-gui
     spotify
     nerd-fonts.jetbrains-mono
@@ -46,6 +45,9 @@
     ryubing
     cemu
     librewolf
+    protonmail-desktop
+    protonup-qt
+    lutris
   ];
 
 

@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
   let
-    home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
+    home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz;
   in
   {
   imports =
@@ -139,7 +139,7 @@ programs.steam = {
 };
   
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
   
 
   programs.adb.enable = true;
@@ -148,6 +148,6 @@ programs.steam = {
   "f /proc/scsi/scsi 0400 root root -"
 ];
 
-  
+ 
 
 }
