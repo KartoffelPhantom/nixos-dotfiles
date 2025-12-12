@@ -48,6 +48,7 @@
     protonmail-desktop
     protonup-qt
     lutris
+    wine
   ];
 
 
