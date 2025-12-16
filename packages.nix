@@ -49,6 +49,8 @@
     protonup-qt
     lutris
     wine
+    qbittorrent-enhanced
+    unrar
   ];
 
 
