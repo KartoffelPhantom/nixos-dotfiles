@@ -51,7 +51,10 @@
     wine
     qbittorrent-enhanced
     unrar
-];
+    mcpelauncher-ui-qt
+    gcc
+    libcxx
+  ];
 
 
    }
