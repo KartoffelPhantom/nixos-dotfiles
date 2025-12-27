@@ -52,7 +52,6 @@
     qbittorrent-enhanced
     unrar
     python3
-    colord
 ];
 
 

@@ -139,8 +139,6 @@ programs.steam = {
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
 };
-  
-services.colord.enable = true;
 
 
   system.stateVersion = "25.11"; # Did you read the comment?
