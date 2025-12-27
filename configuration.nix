@@ -80,9 +80,12 @@ programs.i3lock.enable = true;
 
 
 # Hyrpland
-## programs.hyprland.enable = true;
-
-
+  programs.hyprland = {
+    # Install the packages from nixpkgs
+    enable = true;
+    # Whether to enable XWayland
+    xwayland.enable = true;
+  };
 
 # Plasma6 try
   services = {
