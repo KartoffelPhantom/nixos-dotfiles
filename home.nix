@@ -27,7 +27,7 @@
   home.file.".config/kitty/kitty.conf".source = /home/kartoma/dotfiles/kitty/kitty.conf;
   home.file.".config/kitty/current-theme.conf".source = /home/kartoma/dotfiles/kitty/current-theme.conf;
   home.file.".config/btop/btop.conf".source = /home/kartoma/dotfiles/btop/btop.conf;
-  home.file.".config/hypr/hyprland.conf".source = /home/kartoma/dotfiles/hypr/hyprland.conf;
+#  home.file.".config/hypr/hyprland.conf".source = /home/kartoma/dotfiles/hypr/hyprland.conf;
   home.file.".config/legcord/userAssets/Minecraft.ttf".source = /home/kartoma/dotfiles/legcord/Minecraft.ttf;
 
 
