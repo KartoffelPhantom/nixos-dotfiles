@@ -105,17 +105,19 @@ wayland.windowManager.hyprland = {
       "$mod SHIFT, Q, killactive"
       "$mod, R, exec, wofi --show drun"
     ];  
-    # minimal config to silence warning
+    monitor =
+    [ 
+      "HDMI-A-2, 2560x1440@360, 0x0, 1"
+      "DP-2, 2560x1440@240, 2560x0, 1"
+    ];
     general = {
-      gaps_in = 5;
-      gaps_out = 20;
+      gaps_in = 3;
+      gaps_out = 10;
     };
   };
 };
 
 
 
-
-# Let Home Manager install and manage itself.
  programs.home-manager.enable = true;
 }
