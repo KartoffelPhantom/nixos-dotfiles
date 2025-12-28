@@ -77,6 +77,45 @@
         ll = "ls -al";
       };
  };
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+
+ programs.kitty = {
+  enable = true;
+  settings = {
+    shell = "${pkgs.fish}/bin/fish";
+    };
+ }; 
+
+
+ # Hyprland
+wayland.windowManager.hyprland = {
+  enable = true;
+  systemd = {
+    enable = true;  # if you want this
+    variables = [ "--all" ];
+  };
+  xwayland = {
+  enable = true;
+ };
+
+  settings = {
+    "$mod" = "Alt";
+    bind =
+    [ 
+      "$mod, Q, exec, kitty"
+      "$mod SHIFT, Q, killactive"
+      "$mod, R, exec, wofi --show drun"
+    ];  
+    # minimal config to silence warning
+    general = {
+      gaps_in = 5;
+      gaps_out = 20;
+    };
+  };
+};
+
+
+
+
+# Let Home Manager install and manage itself.
+ programs.home-manager.enable = true;
 }
