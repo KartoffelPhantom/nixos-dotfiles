@@ -1,27 +1,18 @@
-{ config, lib, pkgs, ... }:
-  let
-    home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz;
-  in
-  {
+{ config, lib, pkgs, ...}:
+{  
   imports =
     [ 
       /etc/nixos/hardware-configuration.nix
       ./nvidia.nix
       /home/kartoma/dotfiles/packages.nix
-	(import "${home-manager}/nixos")
   ];
 
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";	
-  home-manager.users.kartoma = import /home/kartoma/dotfiles/home.nix;
   
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kys";
-  networking.networkmanager.enable = true;
-	
+  networking.networkmanager.enable = true;	
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   time.timeZone = "Europe/Berlin";

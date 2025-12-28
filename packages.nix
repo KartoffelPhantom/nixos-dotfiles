@@ -6,6 +6,7 @@
     btop
     wl-clipboard
     _1password-gui
+    fastfetch
     spotify
     nerd-fonts.jetbrains-mono
     alsa-utils
