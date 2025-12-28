@@ -90,33 +90,70 @@
 wayland.windowManager.hyprland = {
   enable = true;
   systemd = {
-    enable = true;  # if you want this
+    enable = true;
     variables = [ "--all" ];
   };
-  xwayland = {
-  enable = true;
- };
+  xwayland.enable = true;  # Fixed: inside hyprland, not separate
 
   settings = {
     "$mod" = "Alt";
-    bind =
-    [ 
+    
+    bind = [
       "$mod, Q, exec, kitty"
       "$mod SHIFT, Q, killactive"
       "$mod, R, exec, wofi --show drun"
-    ];  
-    monitor =
-    [ 
+      "$mod, 1, workspace, 1"
+      "$mod, 2, workspace, 2"
+      "$mod, 3, workspace, 3"
+      "$mod, 4, workspace, 4"
+      "$mod, 5, workspace, 5"
+      "$mod, 6, workspace, 6"
+      "$mod, 7, workspace, 7"
+      "$mod, 8, workspace, 8"
+      "$mod, 9, workspace, 9"
+      "$mod SHIFT, 1, movetoworkspace, 1"
+      "$mod SHIFT, 2, movetoworkspace, 2"
+      "$mod SHIFT, 3, movetoworkspace, 3"
+      "$mod SHIFT, 4, movetoworkspace, 4"
+      "$mod SHIFT, 5, movetoworkspace, 5"
+      "$mod SHIFT, 6, movetoworkspace, 6"
+      "$mod SHIFT, 7, movetoworkspace, 7"
+      "$mod SHIFT, 8, movetoworkspace, 8"
+      "$mod SHIFT, 9, movetoworkspace, 9"
+    ];
+    
+    monitor = [
       "HDMI-A-2, 2560x1440@360, 0x0, 1"
       "DP-2, 2560x1440@240, 2560x0, 1"
     ];
+    
     general = {
       gaps_in = 3;
       gaps_out = 10;
     };
+    
+    animations = {
+      enabled = true;  # Use true/false, not yes/no
+      
+      bezier = [
+        "easeOutQuint, 0.23, 1, 0.32, 1"
+        "easeInOutCubic, 0.65, 0.05, 0.36, 1"
+        "linear, 0, 0, 1, 1"
+        "almostLinear, 0.5, 0.5, 0.75, 1"
+        "quick, 0.15, 0, 0.1, 1"
+      ];
+      
+      animation = [
+        "windows, 1, 4.79, easeOutQuint"
+        "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+        "windowsOut, 1, 1.49, linear, popin 87%"
+        "border, 1, 5.39, easeOutQuint"
+        "fade, 1, 3.03, quick"
+        "workspaces, 1, 1.94, almostLinear, fade"
+      ];
+    };
   };
 };
-
 
 
  programs.home-manager.enable = true;
