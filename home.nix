@@ -70,7 +70,7 @@
   home.sessionVariables = {
   };
 
-  programs.bash = {
+  programs.fish = {
      enable = true;
      shellAliases = {
         c = "clear && fastfetch";
