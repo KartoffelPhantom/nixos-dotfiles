@@ -80,10 +80,8 @@ programs.i3lock.enable = true;
 
 
 # Hyrpland
-  programs.hyprland = {
-    # Install the packages from nixpkgs
+    programs.hyprland = {
     enable = true;
-    # Whether to enable XWayland
     xwayland.enable = true;
   };
 

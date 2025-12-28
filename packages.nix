@@ -20,7 +20,6 @@
     labymod-launcher
     flameshot
     wofi
-    bemenu
     vulkan-loader
     vulkan-tools
     prismlauncher
@@ -52,6 +51,7 @@
     qbittorrent-enhanced
     unrar
     python3
+    blueman
 ];
 
 
