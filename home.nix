@@ -68,9 +68,15 @@
   #  /etc/profiles/per-user/kartoma/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
   };
 
+  programs.bash = {
+     enable = true;
+     shellAliases = {
+        c = "clear && fastfetch";
+        ll = "ls -al";
+      };
+ };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
