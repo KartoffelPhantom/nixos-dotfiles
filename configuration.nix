@@ -81,8 +81,8 @@ programs.i3lock.enable = true;
 
 # Hyrpland
     programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+       enable = true;
+       xwayland.enable = true;
   };
 
 # Plasma6 try

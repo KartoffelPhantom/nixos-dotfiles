@@ -3,10 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-  };
-  outputs = { self, nixpkgs }: {
+ };
+    outputs = { self, nixpkgs, ...}: {
       nixosConfigurations.kys = nixpkgs.lib.nixosSystem {
-      	  modules = [ ./configuration.nix ];
+          system = "x86_64-linux";          
+          modules = [ ./configuration.nix ];
     };
-  }; 
+  };
 }
+
