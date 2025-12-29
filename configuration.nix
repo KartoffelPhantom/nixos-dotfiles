@@ -38,36 +38,7 @@ hardware.bluetooth = {
   };
 };
 
-# services.blueman.enable = true;
 
-
-# i3 config	   
-environment.pathsToLink = [ "/libexec" ];
-
-services.xserver = {
-  enable = true;
-
-  desktopManager.xterm.enable = false;
-
-  windowManager.i3 = {
-    enable = true;
-    extraPackages = with pkgs; [
-      dmenu
-      i3blocks
-      i3status
-    ];
-  };
-};
-
-
-services.libinput = {
-  enable = true;
-  mouse.accelProfile = "flat";
-  touchpad.accelProfile = "flat";
-};
-
-services.displayManager.defaultSession = "none+i3";
-programs.i3lock.enable = true;
 
 # user config
 users.users.kartoma = {

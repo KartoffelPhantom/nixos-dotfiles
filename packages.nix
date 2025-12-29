@@ -7,8 +7,7 @@
     wl-clipboard
     _1password-gui
     fastfetch
-    spotify
-    nerd-fonts.jetbrains-mono
+    spotify 
     alsa-utils
     tree
     git 
@@ -19,7 +18,6 @@
     gamescope
     pavucontrol
     labymod-launcher
-    flameshot
     wofi
     vulkan-loader
     vulkan-tools
@@ -55,6 +53,7 @@
     blueman
     vlc
     wl-clipboard
+    kdePackages.elisa
 ];
 
 

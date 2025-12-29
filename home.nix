@@ -129,6 +129,7 @@ wayland.windowManager.hyprland = {
       "$mod, Q, exec, kitty"
       "$mod SHIFT, Q, killactive"
       "$mod, R, exec, wofi --show drun"
+      "$mod, V, togglefloating"
       "$mod, F, fullscreen"
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
@@ -159,7 +160,7 @@ wayland.windowManager.hyprland = {
       rounding = 10;
       rounding_power = 2;
       active_opacity = 1.0;
-      inactive_opacity = 0.85;
+      inactive_opacity = 1;
 
       shadow = {
         enabled = true;
