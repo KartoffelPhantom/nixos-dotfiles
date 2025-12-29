@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hy3, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -89,11 +89,15 @@
  # Hyprland
 wayland.windowManager.hyprland = {
   enable = true;
-  systemd = {
+    systemd = {
     enable = true;
     variables = [ "--all" ];
   };
-  xwayland.enable = true;  # Fixed: inside hyprland, not separate
+  xwayland.enable = true;
+ 
+  plugins = [
+    hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3
+  ];
 
   settings = {
     "$mod" = "Alt";
@@ -102,6 +106,7 @@ wayland.windowManager.hyprland = {
       "$mod, Q, exec, kitty"
       "$mod SHIFT, Q, killactive"
       "$mod, R, exec, wofi --show drun"
+      "$mod, F, fullscreen"
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
@@ -137,17 +142,17 @@ wayland.windowManager.hyprland = {
     rounding_power = 2;
     
     active_opacity = 1.0;
-    inactive_opacity = 0.8;
+    inactive_opacity = 0.85;
     
     shadow = {
       enabled = true;
       range = 4;
       render_power = 3;
-      color = "rgba(1a1a1aee)";
+      color = "rgba(40E0D0ee)";
     };
     
     blur = {
-      enabled = true;
+      enabled = false;
       size = 3;
       passes = 1;
       vibrancy = 0.1696;
@@ -155,7 +160,7 @@ wayland.windowManager.hyprland = {
   };
 
     animations = {
-    enabled = true;  # Use true/false, not yes/no
+    enabled = true;
       
       bezier = [
         "easeOutQuint, 0.23, 1, 0.32, 1"

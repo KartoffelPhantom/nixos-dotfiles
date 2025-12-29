@@ -69,13 +69,6 @@ services.libinput = {
 services.displayManager.defaultSession = "none+i3";
 programs.i3lock.enable = true;
 
-
-# Hyrpland
-    programs.hyprland = {
-       enable = true;
-       xwayland.enable = true;
-  };
-
 # Plasma6 try
   services = {
   desktopManager.plasma6.enable = true;
