@@ -53,6 +53,7 @@
     unrar
     python3
     blueman
+    vlc
 ];
 
 
