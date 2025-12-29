@@ -101,8 +101,31 @@ wayland.windowManager.hyprland = {
 
   settings = {
     "$mod" = "Alt";
-    
+
+    general = {
+      gaps_in = 3;
+      gaps_out = 10;
+      layout = "hy3";  # use hy3 layout
+    };
+
+    plugin.hy3 = {
+      autotile.enable = true;
+    };
+
     bind = [
+      # hy3 focus movement
+      "$mod, h, hy3:movefocus, l"
+      "$mod, j, hy3:movefocus, d"
+      "$mod, k, hy3:movefocus, u"
+      "$mod, l, hy3:movefocus, r"
+
+      # hy3 move window
+      "$mod SHIFT, h, hy3:movewindow, l"
+      "$mod SHIFT, j, hy3:movewindow, d"
+      "$mod SHIFT, k, hy3:movewindow, u"
+      "$mod SHIFT, l, hy3:movewindow, r"
+
+      # your existing commands
       "$mod, Q, exec, kitty"
       "$mod SHIFT, Q, killactive"
       "$mod, R, exec, wofi --show drun"
@@ -126,42 +149,41 @@ wayland.windowManager.hyprland = {
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
     ];
-    
+
     monitor = [
       "HDMI-A-2, 2560x1440@360, 0x0, 1"
       "DP-2, 2560x1440@240, 2560x0, 1"
     ];
-    
-    general = {
-      gaps_in = 3;
-      gaps_out = 10;
+
+    decoration = {
+      rounding = 10;
+      rounding_power = 2;
+      active_opacity = 1.0;
+      inactive_opacity = 0.85;
+
+      shadow = {
+        enabled = true;
+        range = 4;
+        render_power = 3;
+        color = "rgba(40E0D0ee)";
+      };
+
+      blur = {
+        enabled = false;
+        size = 3;
+        passes = 1;
+        vibrancy = 0.1696;
+      };
     };
-    
-      decoration = {
-    rounding = 10;
-    rounding_power = 2;
-    
-    active_opacity = 1.0;
-    inactive_opacity = 0.85;
-    
-    shadow = {
-      enabled = true;
-      range = 4;
-      render_power = 3;
-      color = "rgba(40E0D0ee)";
-    };
-    
-    blur = {
-      enabled = false;
-      size = 3;
-      passes = 1;
-      vibrancy = 0.1696;
-    };
-  };
+
+    misc = { };
+
+    windowrulev2 = [
+      "tile,class:^(.*)$"
+    ];
 
     animations = {
-    enabled = true;
-      
+      enabled = true;
       bezier = [
         "easeOutQuint, 0.23, 1, 0.32, 1"
         "easeInOutCubic, 0.65, 0.05, 0.36, 1"
@@ -169,28 +191,28 @@ wayland.windowManager.hyprland = {
         "almostLinear, 0.5, 0.5, 0.75, 1"
         "quick, 0.15, 0, 0.1, 1"
       ];
-      
       animation = [
-      "global, 1, 10, default"
-      "border, 1, 5.39, easeOutQuint"
-      "windows, 1, 4.79, easeOutQuint"
-      "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-      "windowsOut, 1, 1.49, linear, popin 87%"
-      "fadeIn, 1, 1.73, almostLinear"
-      "fadeOut, 1, 1.46, almostLinear"
-      "fade, 1, 3.03, quick"
-      "layers, 1, 3.81, easeOutQuint"
-      "layersIn, 1, 4, easeOutQuint, fade"
-      "layersOut, 1, 1.5, linear, fade"
-      "fadeLayersIn, 1, 1.79, almostLinear"
-      "fadeLayersOut, 1, 1.39, almostLinear"
-      "workspaces, 1, 1.94, almostLinear, fade"
-      "workspacesIn, 1, 1.21, almostLinear, fade"
-      "workspacesOut, 1, 1.94, almostLinear, fade"
-      "zoomFactor, 1, 7, quick"
+        "global, 1, 10, default"
+        "border, 1, 5.39, easeOutQuint"
+        "windows, 1, 4.79, easeOutQuint"
+        "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+        "windowsOut, 1, 1.49, linear, popin 87%"
+        "fadeIn, 1, 1.73, almostLinear"
+        "fadeOut, 1, 1.46, almostLinear"
+        "fade, 1, 3.03, quick"
+        "layers, 1, 3.81, easeOutQuint"
+        "layersIn, 1, 4, easeOutQuint, fade"
+        "layersOut, 1, 1.5, linear, fade"
+        "fadeLayersIn, 1, 1.79, almostLinear"
+        "fadeLayersOut, 1, 1.39, almostLinear"
+        "workspaces, 1, 1.94, almostLinear, fade"
+        "workspacesIn, 1, 1.21, almostLinear, fade"
+        "workspacesOut, 1, 1.94, almostLinear, fade"
+        "zoomFactor, 1, 7, quick"
       ];
     };
   };
+
 };
 
 

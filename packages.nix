@@ -54,6 +54,7 @@
     python3
     blueman
     vlc
+    wl-clipboard
 ];
 
 

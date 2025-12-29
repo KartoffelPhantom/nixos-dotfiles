@@ -7,26 +7,38 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland?submodules=1";
-     hy3 = {
-       url = "github:outfoxxed/hy3";
-       inputs.hyprland.follows = "hyprland";
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
     };
   };
-   
-   outputs = { self, nixpkgs, home-manager, hyprland, hy3, ... }:   
-      let
-        lib = nixpkgs.lib;
-	system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
-      in {
-         nixosConfigurations.kys = nixpkgs.lib.nixosSystem {
-          inherit system;         
-          modules = [ ./configuration.nix ];
-    };
+
+  outputs = { self, nixpkgs, home-manager, hyprland, hy3, ... }:
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      nixosConfigurations.kys = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./configuration.nix ];
+      };
+
       homeConfigurations.kartoma = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit hy3 hyprland; };
-        modules = [ ./home.nix ]; 
+        modules = [
+          ./home.nix
+          hyprland.homeManagerModules.default
+          {
+            wayland.windowManager.hyprland = {
+              enable = true;
+              plugins = [ hy3.packages.${system}.hy3 ];
+            };
+          }
+        ];
       };
-};
+    };
 }
+
