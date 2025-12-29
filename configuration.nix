@@ -71,10 +71,10 @@ programs.i3lock.enable = true;
 
 
 # Hyrpland
-#    programs.hyprland = {
-#       enable = true;
-#       xwayland.enable = true;
-#  };
+    programs.hyprland = {
+       enable = true;
+       xwayland.enable = true;
+  };
 
 # Plasma6 try
   services = {
