@@ -54,6 +54,19 @@
     vlc
     wl-clipboard
     kdePackages.elisa
+    wlr-randr
+    mesa
+    hyprshot
+    alacritty
+];
+
+fonts.packages = with pkgs; [
+  dejavu_fonts
+  liberation_ttf
+  noto-fonts  # Use the correct name found in the previous step
+  fira-code
+  nerd-fonts.jetbrains-mono
+  noto-fonts-color-emoji
 ];
 
 

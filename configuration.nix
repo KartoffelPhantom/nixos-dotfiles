@@ -71,6 +71,19 @@ environment.shells = with pkgs; [ fish ];
 users.defaultUserShell = pkgs.fish;
 programs.fish.enable = true;
 
+# Pipewire
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true; # if not already enabled
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment the following
+    #jack.enable = true;
+  };
+
+
+
   system.stateVersion = "25.11"; # Did you read the comment?
   
 

@@ -20,7 +20,7 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    ## pkgs.hello
+    # # pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -75,16 +75,16 @@
      shellAliases = {
         c = "clear && fastfetch";
         ll = "ls -al";
+	nrs = "cd ~/dotfiles && sudo nixos-rebuild switch --flake --impure";
+	hms = "cd ~/dotfiles && home-manager switch --flake .";
+        nrsu = "cd ~/dotfiles && nix flake update && sudo nixos-rebuild switch --flake --impure && home-manager switch --flake .";
       };
  };
 
- programs.kitty = {
+  
+ services.mako = {
   enable = true;
-  settings = {
-    shell = "${pkgs.fish}/bin/fish";
-    };
- }; 
-
+ };
 
  # Hyprland
 wayland.windowManager.hyprland = {
@@ -129,6 +129,7 @@ wayland.windowManager.hyprland = {
       "$mod, Q, exec, kitty"
       "$mod SHIFT, Q, killactive"
       "$mod, R, exec, wofi --show drun"
+      "$mod SHIFT, S,exec, hyprshot -m region"
       "$mod, V, togglefloating"
       "$mod, F, fullscreen"
       "$mod, 1, workspace, 1"
@@ -170,7 +171,7 @@ wayland.windowManager.hyprland = {
       };
 
       blur = {
-        enabled = false;
+        enabled = true;
         size = 3;
         passes = 1;
         vibrancy = 0.1696;
