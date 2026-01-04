@@ -73,14 +73,28 @@
   programs.fish = {
      enable = true;
      shellAliases = {
-        c = "clear && fastfetch";
+        c = "clear && krabby random -i";
         ll = "ls -al";
 	nrs = "cd ~/dotfiles && sudo nixos-rebuild switch --flake --impure";
 	hms = "cd ~/dotfiles && home-manager switch --flake .";
         nrsu = "cd ~/dotfiles && nix flake update && sudo nixos-rebuild switch --flake --impure && home-manager switch --flake .";
-      };
+       };
+     interactiveShellInit = ''
+      set -U fish_greeting
+      if status is-interactive
+       krabby random -i
+      end
+     ''; 
  };
 
+  programs.kitty = {
+    enable = true;
+    themeFile = "rose-pine-moon";
+    font = {
+       name = "JetBrainsMono Nerd Font";
+       size = 13;
+       };
+    };
   
  services.mako = {
   enable = true;

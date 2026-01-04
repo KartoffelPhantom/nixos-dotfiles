@@ -2,7 +2,6 @@
    {
        # environment packages
   environment.systemPackages = with pkgs; [ 
-    kitty
     btop
     wl-clipboard
     _1password-gui
@@ -57,7 +56,8 @@
     wlr-randr
     mesa
     hyprshot
-    alacritty
+    osu-lazer
+    pkgs.krabby
 ];
 
 fonts.packages = with pkgs; [
