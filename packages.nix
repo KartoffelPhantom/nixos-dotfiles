@@ -62,6 +62,8 @@
     kdePackages.dolphin
     nwg-look
     win2xcur
+    hyprpaper
+    feh
 ];
 
 fonts.packages = with pkgs; [

@@ -254,9 +254,20 @@ wayland.windowManager.hyprland = {
 
 # Hyprpaper
 services.hyprpaper = {
-   enable = true;
-   };
-
+  enable = true;
+  settings = {
+    ipc = "on";
+    splash = false;
+    splash_offset = 2.0;
+    preload = [
+      "/home/kartoma/dotfiles/other/i3/lz.jpg"
+     ];
+    wallpaper = [
+      "HDMI-A-2,/home/kartoma/dotfiles/other/i3/lz.jpg"
+      "DP-2,/home/kartoma/dotfiles/other/i3/lz.jpg"
+    ];
+  };
+};
 
  programs.home-manager.enable = true;
 }
