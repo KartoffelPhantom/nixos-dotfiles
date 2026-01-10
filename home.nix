@@ -105,9 +105,11 @@ home.pointerCursor = {
   x11.enable = true;
   name = "Kirby";
   size = 24;
-  package = pkgs.runCommand "kirby-cursor" {} ''
+  package = pkgs.runCommand "kirby-cursor" {
+    src = ./other/cursor/Kirby;
+  } ''
     mkdir -p $out/share/icons/Kirby
-    cp -rT /home/kartoma/dotfiles/other/cursor/Kirby $out/share/icons/Kirby
+    cp -rT "$src" "$out/share/icons/Kirby"
   '';
 };
 
