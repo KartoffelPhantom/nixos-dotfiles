@@ -209,8 +209,6 @@ wayland.windowManager.hyprland = {
     misc = { };
 
     env = [
-      "XCURSOR_THEME,Kirby"
-      "XCURSOR_SIZE,24"
     ];
 
     exec-once = [ 
@@ -253,6 +251,11 @@ wayland.windowManager.hyprland = {
   };
 
 };
+
+# Hyprpaper
+services.hyprpaper = {
+   enable = true;
+   };
 
 
  programs.home-manager.enable = true;
