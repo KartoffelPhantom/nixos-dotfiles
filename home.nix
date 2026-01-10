@@ -215,9 +215,7 @@ wayland.windowManager.hyprland = {
       "hyprctl setcursor Kirby 24"
     ];
 
-    windowrulev2 = [
-      "tile,class:^(.*)$"
-    ];
+   
 
     animations = {
       enabled = true;
