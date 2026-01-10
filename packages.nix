@@ -59,6 +59,9 @@
     osu-lazer
     pkgs.krabby
     gparted
+    kdePackages.dolphin
+    nwg-look
+    win2xcur
 ];
 
 fonts.packages = with pkgs; [

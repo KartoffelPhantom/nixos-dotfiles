@@ -194,6 +194,15 @@ wayland.windowManager.hyprland = {
 
     misc = { };
 
+    env = [
+      "XCURSOR_THEME,Kirby"
+      "XCURSOR_SIZE,24"
+    ];
+
+    exec-once = [ 
+      "hyprctl setcursor Kirby 24"
+    ];
+
     windowrulev2 = [
       "tile,class:^(.*)$"
     ];
