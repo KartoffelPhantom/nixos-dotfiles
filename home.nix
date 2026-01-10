@@ -100,7 +100,19 @@
   enable = true;
  };
 
- # Hyprland
+home.pointerCursor = {
+  gtk.enable = true;
+  x11.enable = true;
+  name = "Kirby";
+  size = 24;
+  package = pkgs.runCommand "kirby-cursor" {} ''
+    mkdir -p $out/share/icons/Kirby
+    cp -rT /home/kartoma/dotfiles/other/cursor/Kirby $out/share/icons/Kirby
+  '';
+};
+
+
+# Hyprland
 wayland.windowManager.hyprland = {
   enable = true;
     systemd = {
