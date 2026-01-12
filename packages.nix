@@ -64,6 +64,7 @@
     win2xcur
     hyprpaper
     feh
+    obsidian 
 ];
 
 fonts.packages = with pkgs; [
