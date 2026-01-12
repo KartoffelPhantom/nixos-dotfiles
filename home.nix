@@ -139,6 +139,11 @@ wayland.windowManager.hyprland = {
     plugin.hy3 = {
       autotile.enable = true;
     };
+    
+    input = {
+      kb_layout = "us";
+      kb_variant = "intl";
+    };
 
     bind = [
       # hy3 focus movement
